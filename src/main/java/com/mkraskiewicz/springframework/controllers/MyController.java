@@ -3,7 +3,7 @@ package com.mkraskiewicz.springframework.controllers;
 import org.springframework.stereotype.Controller;
 
 /**
- * Created by Maciej on $ mar, 2018
+ * Created by Maciej on mar, 2018
  */
 @Controller
 public class MyController {

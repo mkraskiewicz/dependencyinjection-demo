@@ -1,6 +1,9 @@
 package com.mkraskiewicz.springframework;
 
+import com.mkraskiewicz.springframework.controllers.ConstructorInjectedController;
 import com.mkraskiewicz.springframework.controllers.MyController;
+import com.mkraskiewicz.springframework.controllers.PropertyInjectedController;
+import com.mkraskiewicz.springframework.controllers.SetterInjectedController;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
@@ -15,5 +18,11 @@ public class DependencyinjectionDemoApplication {
 		MyController controller = (MyController) ctx.getBean(MY_CONTROLLER);
 		controller.setMessage("Hello World");
 		controller.printMessage();
-	}
+
+
+		//Running DI controllers
+        System.out.println(ctx.getBean(ConstructorInjectedController.class).sayHello());
+        System.out.println(ctx.getBean(PropertyInjectedController.class).sayHello());
+        System.out.println(ctx.getBean(SetterInjectedController.class).sayHello());
+    }
 }
