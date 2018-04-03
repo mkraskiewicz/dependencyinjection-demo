@@ -16,11 +16,10 @@ public class DependencyinjectionDemoApplication {
 
 		ApplicationContext ctx = SpringApplication.run(DependencyinjectionDemoApplication.class, args);
 		MyController controller = (MyController) ctx.getBean(MY_CONTROLLER);
-		controller.setMessage("Hello World");
-		controller.printMessage();
 
 
 		//Running DI controllers
+        System.out.println(controller.sayHello());
         System.out.println(ctx.getBean(ConstructorInjectedController.class).sayHello());
         System.out.println(ctx.getBean(PropertyInjectedController.class).sayHello());
         System.out.println(ctx.getBean(SetterInjectedController.class).sayHello());

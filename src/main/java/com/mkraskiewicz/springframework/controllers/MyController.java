@@ -1,5 +1,6 @@
 package com.mkraskiewicz.springframework.controllers;
 
+import com.mkraskiewicz.springframework.services.GreetingService;
 import org.springframework.stereotype.Controller;
 
 /**
@@ -8,12 +9,13 @@ import org.springframework.stereotype.Controller;
 @Controller
 public class MyController {
 
-    private String message;
+    private GreetingService greetingService;
 
-    public void setMessage(String message){
-        this.message = message;
+    public MyController(GreetingService greetingService) {
+        this.greetingService = greetingService;
     }
-    public void printMessage(){
-        System.out.println(message);
+
+    public String sayHello(){
+        return greetingService.sayHello();
     }
 }

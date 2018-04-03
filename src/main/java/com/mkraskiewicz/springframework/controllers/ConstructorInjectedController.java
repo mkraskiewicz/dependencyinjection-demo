@@ -1,7 +1,7 @@
 package com.mkraskiewicz.springframework.controllers;
 
 import com.mkraskiewicz.springframework.services.GreetingService;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 
 /**
@@ -13,7 +13,7 @@ public class ConstructorInjectedController {
     private GreetingService greetingService;
 
     //Annotation is not needed for Constructor DI!
-    ConstructorInjectedController(GreetingService greetingService){
+    ConstructorInjectedController(@Qualifier("constructorGreetingServiceImpl") GreetingService greetingService){
         this.greetingService = greetingService;
     }
 

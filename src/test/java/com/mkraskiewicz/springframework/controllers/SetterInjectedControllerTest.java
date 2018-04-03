@@ -1,5 +1,6 @@
 package com.mkraskiewicz.springframework.controllers;
 
+import com.mkraskiewicz.springframework.controllers.SetterInjectedController;
 import com.mkraskiewicz.springframework.services.impl.GreetingServiceImpl;
 import org.junit.Assert;
 import org.junit.Before;
