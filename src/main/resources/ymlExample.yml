@@ -1,0 +1,32 @@
+#These are examples for yml property data:
+
+name: Maciej
+
+names:
+    - Maciej
+    - Pawel
+    - Wieslawa
+    - Aleksandra
+
+game:
+    author: Maciej
+    title: The Game
+
+string_colon: "I present you the ':' "
+
+false: no
+
+second_false: false
+
+truth: yes #true TRUE
+
+including_lines: |
+    this
+    is a text
+    including new lines.
+
+not_including_new_lines: >
+   and this
+   one is not.
+   It will be seen
+   as a one-liner.

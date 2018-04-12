@@ -1,5 +1,7 @@
 package com.mkraskiewicz.springframework;
 
+import com.mkraskiewicz.springframework.beans.JmsUserBean;
+import com.mkraskiewicz.springframework.beans.UserBean;
 import com.mkraskiewicz.springframework.controllers.ConstructorInjectedController;
 import com.mkraskiewicz.springframework.controllers.MyController;
 import com.mkraskiewicz.springframework.controllers.PropertyInjectedController;
@@ -15,13 +17,16 @@ public class DependencyinjectionDemoApplication {
 	public static void main(String[] args) {
 
 		ApplicationContext ctx = SpringApplication.run(DependencyinjectionDemoApplication.class, args);
+		//Get Beans
 		MyController controller = (MyController) ctx.getBean(MY_CONTROLLER);
+        UserBean user = ctx.getBean(UserBean.class);
+        JmsUserBean jmsUser = ctx.getBean(JmsUserBean.class);
 
-
-		//Running DI controllers
+        //Running DI controllers
         System.out.println(controller.sayHello());
-        System.out.println(ctx.getBean(ConstructorInjectedController.class).sayHello());
-        System.out.println(ctx.getBean(PropertyInjectedController.class).sayHello());
-        System.out.println(ctx.getBean(SetterInjectedController.class).sayHello());
+
+        //Checking configurated beans
+        System.out.println(user.toString());
+        System.out.println(jmsUser.toString());
     }
 }
