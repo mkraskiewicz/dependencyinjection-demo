@@ -14,8 +14,7 @@ import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
  */
 @Configuration
 @PropertySources({
-        @PropertySource("classpath:fakeData.properties"),
-        @PropertySource("classpath:fakeData.jms.properties")
+        @PropertySource("classpath:fakeData.properties")
         })
 public class FakeDataPropertyConfig {
 
