@@ -1,0 +1,12 @@
+mkraskiewicz:
+    jms:
+        username: MK_JMS
+        password: admin1
+        url: some_URL_address
+
+---
+spring:
+    profiles: de
+mkraskiewicz:
+    jms:
+        username: MK_JMS *GERMAN*
